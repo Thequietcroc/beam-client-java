@@ -9,6 +9,7 @@ import com.mixer.api.resource.channel.MixerChannel;
 import com.mixer.api.resource.interactive.InteractiveGame;
 import com.mixer.api.resource.interactive.InteractiveVersion;
 import com.mixer.api.resource.interactive.RobotInfo;
+import com.mixer.api.response.interactive.InteractiveOwnedResponse;
 import com.mixer.api.services.AbstractHTTPService;
 
 public class InteractiveService extends AbstractHTTPService {
@@ -35,5 +36,9 @@ public class InteractiveService extends AbstractHTTPService {
 
     public ListenableFuture<InteractiveVersion> getInteractiveVersion(int versionId) {
         return this.get(String.format("versions/%d", versionId), InteractiveVersion.class);
+    }
+    
+    public ListenableFuture<InteractiveOwnedResponse> getInteractiveGamesOwned(int userId) {
+    	return this.get(String.format("games/owned?user=%d", userId), InteractiveOwnedResponse.class);
     }
 }
