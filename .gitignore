@@ -5,3 +5,8 @@ target/
 src/main/java/com/mixer/api/Application.java
 
 \.project
+/bin/
+
+\.settings/
+
+\.classpath
