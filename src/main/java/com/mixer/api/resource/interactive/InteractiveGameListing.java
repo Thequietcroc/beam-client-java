@@ -9,15 +9,6 @@ import com.mixer.api.resource.MixerUser;
 /**
  * Describes an interactive game listing.
  */
-public class InteractiveGameListing implements Serializable {
-	public int id;
-    public int ownerId;
-    public String name;
-    public String coverUrl;
-    public String description;
-    public boolean hasPublishedVersions;
-    public String installation;
-    public Date createdAt;
-    public Date updatedAt;    
+public class InteractiveGameListing extends InteractiveGame {
 	public List<InteractiveVersion> versions;
 }
